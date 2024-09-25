@@ -1,0 +1,11 @@
+﻿namespace Shared.Exceptions.User
+{
+    public class UserDataException : Exception
+    {
+        public UserDataException(string message)
+            :base(message)
+        {
+
+        }
+    }
+}

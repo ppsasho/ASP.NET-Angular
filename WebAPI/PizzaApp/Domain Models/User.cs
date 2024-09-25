@@ -1,6 +1,9 @@
-﻿namespace Domain_Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Domain_Models
 {
-    internal class User
+    public class User : IdentityUser
     {
+
     }
 }

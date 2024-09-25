@@ -1,4 +1,6 @@
 
+using Mappers;
+
 namespace PizzaApp
 {
     public class Program
@@ -13,6 +15,8 @@ namespace PizzaApp
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
             var app = builder.Build();
 
