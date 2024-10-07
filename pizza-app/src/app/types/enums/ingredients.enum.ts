@@ -1,0 +1,39 @@
+export enum Ingredient{
+    TOMATO_SAUCE = "TOMATO SAUCE",
+    MOZZARELLA = "MOZZARELLA",
+    HAM = "HAM",
+    OREGANO = "OREGANO",
+    GARLIC = "GARLIC",
+    ONION = "ONION",
+    MUSHROOMS = "MUSHROOMS",
+    PARMESAN = "PARMESAN",
+    BASIL = "BASIL",
+    PEPPERONI = "PEPPERONI",
+    CHILI_PEPPER = "CHILI PEPPER",
+    SOUR_CREAM = "SOUR CREAM",
+    BACON = "BACON",
+    BLUE_CHEESE = "BLUE CHEESE",
+    GORGONZOLA = "GORGONZOLA",
+    TUNA = "TUNA",
+    OLIVES = "OLIVES"
+}
+
+export enum IngredientBE {
+    TOMATO_SAUCE,
+    MOZZARELLA,
+    HAM,
+    OREGANO,
+    GARLIC,
+    ONION,
+    MUSHROOMS,
+    PARMESAN,
+    BASIL,
+    PEPPERONI,
+    CHILI_PEPPER,
+    SOUR_CREAM,
+    BACON,
+    BLUE_CHEESE,
+    GORGONZOLA,
+    TUNA,
+    OLIVES
+}
