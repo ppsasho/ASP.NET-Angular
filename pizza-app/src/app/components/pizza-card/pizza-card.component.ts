@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, Input } from '@angular/core';
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
 import { Pizza } from '../../types/interfaces/pizza.interface';
 import { AuthService } from '../../services/auth.service';
+import { PizzaService } from '../../services/pizza.service';
+import { Router } from '@angular/router';
+import { NormalizeEnumPipe } from "../../pipes/normalize-enum.pipe";
 
 @Component({
   selector: 'app-pizza-card',
@@ -15,18 +18,28 @@ import { AuthService } from '../../services/auth.service';
     MatCardModule,
     MatChipsModule,
     MatIconModule,
-    MatButtonModule,
-  ],
+    MatButtonModule
+    // custom pipe
+    ,
+    NormalizeEnumPipe
+],
   templateUrl: './pizza-card.component.html',
   styleUrl: './pizza-card.component.scss'
 })
 export class PizzaCardComponent {
-  @Input() pizza: Pizza | undefined
-  // isLoggedIn = computed(() => this.authService.isLoggedIn());
+  @Input() pizza: Pizza | undefined;
+  isLoggedIn = computed(() => this.authService.isLoggedIn());
+  
+  constructor(
+    private authService: AuthService,
+    private pizzaService: PizzaService,
+    private router: Router
+  ) {}
 
-
-  constructor(authService: AuthService) {
-    // authService = AuthService;
-    
+  selectPizza(): void {
+    this.pizzaService.updateSelectedIngredients(
+      this.pizza?.ingredients ?? []
+    )
+    this.router.navigate(['/pizza-maker']);
   }
 }
